@@ -32,6 +32,8 @@ fi
 # 필요한 패키지 설치
 pip install mypy
 
+mkdir -p output
+
 # Submission 폴더 파일 실행
 cd submission || { echo "[INFO] submission 디렉토리로 이동 실패"; exit 1; }
 
