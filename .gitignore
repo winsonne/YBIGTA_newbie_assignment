@@ -216,3 +216,9 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+1(2)-CS_basics/miniconda.sh
+
+1(2)-CS_basics/input/
+1(2)-CS_basics/output/
+1(2)-CS_basics/submission/
+1(2)-CS_basics/miniconda.sh

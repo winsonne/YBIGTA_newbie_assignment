@@ -4,17 +4,17 @@ from collections import deque
 
 """
 TODO:
-- rotate_and_remove ±¸ÇöÇÏ±â 
+- rotate_and_remove êµ¬í˜„í•˜ê¸° 
 """
 
 
 def create_circular_queue(n: int) -> deque[int]:
-    """1ºÎÅÍ n±îÁöÀÇ ¼ıÀÚ·Î deque¸¦ »ı¼ºÇÕ´Ï´Ù."""
+    """1ë¶€í„° nê¹Œì§€ì˜ ìˆ«ìë¡œ dequeë¥¼ ìƒì„±í•©ë‹ˆë‹¤."""
     return deque(range(1, n + 1))
 
 def rotate_and_remove(queue: deque[int], k: int) -> int:
     """
-    Å¥¿¡¼­ k¹øÂ° ¿ø¼Ò¸¦ Á¦°ÅÇÏ°í ¹İÈ¯ÇÕ´Ï´Ù.
+    íì—ì„œ kë²ˆì§¸ ì›ì†Œë¥¼ ì œê±°í•˜ê³  ë°˜í™˜í•©ë‹ˆë‹¤.
     """
     queue.rotate(-(k - 1))
     return queue.popleft()
@@ -24,18 +24,18 @@ def rotate_and_remove(queue: deque[int], k: int) -> int:
 
 """
 TODO:
-- simulate_card_game ±¸ÇöÇÏ±â
-    # Ä«µå °ÔÀÓ ½Ã¹Ä·¹ÀÌ¼Ç ±¸Çö
-        # 1. Å¥ »ı¼º
-        # 2. Ä«µå°¡ 1Àå ³²À» ¶§±îÁö ¹İº¹
-        # 3. ¸¶Áö¸· ³²Àº Ä«µå ¹İÈ¯
+- simulate_card_game êµ¬í˜„í•˜ê¸°
+    # ì¹´ë“œ ê²Œì„ ì‹œë®¬ë ˆì´ì…˜ êµ¬í˜„
+        # 1. í ìƒì„±
+        # 2. ì¹´ë“œê°€ 1ì¥ ë‚¨ì„ ë•Œê¹Œì§€ ë°˜ë³µ
+        # 3. ë§ˆì§€ë§‰ ë‚¨ì€ ì¹´ë“œ ë°˜í™˜
 """
 
 
 def simulate_card_game(n: int) -> int:
     """
-    Ä«µå2 ¹®Á¦ÀÇ ½Ã¹Ä·¹ÀÌ¼Ç
-    ¸Ç À§ Ä«µå¸¦ ¹ö¸®°í, ±× ´ÙÀ½ Ä«µå¸¦ ¸Ç ¾Æ·¡·Î ÀÌµ¿
+    ì¹´ë“œ2 ë¬¸ì œì˜ ì‹œë®¬ë ˆì´ì…˜
+    ë§¨ ìœ„ ì¹´ë“œë¥¼ ë²„ë¦¬ê³ , ê·¸ ë‹¤ìŒ ì¹´ë“œë¥¼ ë§¨ ì•„ë˜ë¡œ ì´ë™
     """
     queue = create_circular_queue(n)
     while len(queue) > 1:
@@ -44,7 +44,7 @@ def simulate_card_game(n: int) -> int:
     return queue[0]
 
 def solve_card2() -> None:
-    """ÀÔ, Ãâ·Â format"""
+    """ì…, ì¶œë ¥ format"""
     n: int = int(input())
     result: int = simulate_card_game(n)
     print(result)

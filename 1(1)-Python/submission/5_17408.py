@@ -6,7 +6,7 @@ from typing import TypeVar, Generic, Optional, Callable
 
 """
 TODO:
-- SegmentTree ±¸ÇöÇÏ±â
+- SegmentTree êµ¬í˜„í•˜ê¸°
 """
 
 
@@ -77,7 +77,7 @@ class SegmentTree(Generic[T, U]):
             left_value = self.tree[left]
 
             if not isinstance(left_value, int):
-                raise TypeError("find_kth´Â int ¼¼±×¸ÕÆ® Æ®¸®¿¡¼­¸¸ »ç¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù.")
+                raise TypeError("find_kthëŠ” int ì„¸ê·¸ë¨¼íŠ¸ íŠ¸ë¦¬ì—ì„œë§Œ ì‚¬ìš©í•  ìˆ˜ ìˆìŠµë‹ˆë‹¤.")
 
             if left_value >= k:
                 node = left
@@ -88,20 +88,19 @@ class SegmentTree(Generic[T, U]):
         return node - self.size
 
 
-from __future__ import annotations
 import sys
 
 
 """
 TODO:
-- ÀÏ´Ü SegmentTreeºÎÅÍ ±¸ÇöÇÏ±â
-- main ±¸ÇöÇÏ±â
+- ì¼ë‹¨ SegmentTreeë¶€í„° êµ¬í˜„í•˜ê¸°
+- main êµ¬í˜„í•˜ê¸°
 """
 
 
 class Pair(tuple[int, int]):
     """
-    ÈùÆ®: 2243, 3653¿¡¼­ int¿¡ ´ëÇÑ ¼¼±×¸ÕÆ® Æ®¸®¸¦ ¸¸µé¾ú´Ù¸é ¿©±â¼­´Â Pair¿¡ ´ëÇÑ ¼¼±×¸ÕÆ® Æ®¸®¸¦ ¸¸µé ¼ö ÀÖÀ»Áöµµ...?
+    íŒíŠ¸: 2243, 3653ì—ì„œ intì— ëŒ€í•œ ì„¸ê·¸ë¨¼íŠ¸ íŠ¸ë¦¬ë¥¼ ë§Œë“¤ì—ˆë‹¤ë©´ ì—¬ê¸°ì„œëŠ” Pairì— ëŒ€í•œ ì„¸ê·¸ë¨¼íŠ¸ íŠ¸ë¦¬ë¥¼ ë§Œë“¤ ìˆ˜ ìˆì„ì§€ë„...?
     """
     def __new__(cls, a: int, b: int) -> 'Pair':
         return super().__new__(cls, (a, b))
@@ -109,24 +108,24 @@ class Pair(tuple[int, int]):
     @staticmethod
     def default() -> 'Pair':
         """
-        ±âº»°ª
-        ÀÌ°Ô ¿Ö ÇÊ¿äÇÒ±î...?
+        ê¸°ë³¸ê°’
+        ì´ê²Œ ì™œ í•„ìš”í• ê¹Œ...?
         """
         return Pair(0, 0)
 
     @staticmethod
     def f_conv(w: int) -> 'Pair':
         """
-        ¿øº» ¼ö¿­ÀÇ °ªÀ» ´ëÀÀµÇ´Â Pair °ªÀ¸·Î º¯È¯ÇÏ´Â ¿¬»ê
-        ÀÌ°Ô ¿Ö ÇÊ¿äÇÒ±î...?
+        ì›ë³¸ ìˆ˜ì—´ì˜ ê°’ì„ ëŒ€ì‘ë˜ëŠ” Pair ê°’ìœ¼ë¡œ ë³€í™˜í•˜ëŠ” ì—°ì‚°
+        ì´ê²Œ ì™œ í•„ìš”í• ê¹Œ...?
         """
         return Pair(w, 0)
 
     @staticmethod
     def f_merge(a: Pair, b: Pair) -> 'Pair':
         """
-        µÎ Pair¸¦ ÇÏ³ªÀÇ Pair·Î ÇÕÄ¡´Â ¿¬»ê
-        ÀÌ°Ô ¿Ö ÇÊ¿äÇÒ±î...?
+        ë‘ Pairë¥¼ í•˜ë‚˜ì˜ Pairë¡œ í•©ì¹˜ëŠ” ì—°ì‚°
+        ì´ê²Œ ì™œ í•„ìš”í• ê¹Œ...?
         """
         return Pair(*sorted([*a, *b], reverse=True)[:2])
 

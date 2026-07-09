@@ -1,17 +1,17 @@
-# lib.pyÀÇ Matrix Å¬·¡½º¸¦ ÂüÁ¶ÇÏÁö ¾ÊÀ½
+# lib.pyì˜ Matrix í´ë˜ìŠ¤ë¥¼ ì°¸ì¡°í•˜ì§€ ì•ŠìŒ
 import sys
 
 
 """
 TODO:
-- fast_power ±¸ÇöÇÏ±â 
+- fast_power êµ¬í˜„í•˜ê¸° 
 """
 
 
 def fast_power(base: int, exp: int, mod: int) -> int:
     """
-    ºü¸¥ °ÅµìÁ¦°ö ¾Ë°í¸®Áò ±¸Çö
-    ºĞÇÒ Á¤º¹À» ÀÌ¿ë, ½Ã°£º¹Àâµµ °í¹Î!
+    ë¹ ë¥¸ ê±°ë“­ì œê³± ì•Œê³ ë¦¬ì¦˜ êµ¬í˜„
+    ë¶„í•  ì •ë³µì„ ì´ìš©, ì‹œê°„ë³µì¡ë„ ê³ ë¯¼!
     """
     base %= mod
     result = 1
@@ -26,9 +26,9 @@ def main() -> None:
     A: int
     B: int
     C: int
-    A, B, C = map(int, input().split()) # ÀÔ·Â °íÁ¤
+    A, B, C = map(int, input().split()) # ì…ë ¥ ê³ ì •
     
-    result: int = fast_power(A, B, C) # Ãâ·Â Çü½Ä
+    result: int = fast_power(A, B, C) # ì¶œë ¥ í˜•ì‹
     print(result) 
 
 if __name__ == "__main__":

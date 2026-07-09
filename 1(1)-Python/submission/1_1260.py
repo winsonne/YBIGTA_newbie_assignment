@@ -7,18 +7,18 @@ from typing import DefaultDict, List
 
 """
 TODO:
-- __init__ ±¸ÇöÇÏ±â
-- add_edge ±¸ÇöÇÏ±â
-- dfs ±¸ÇöÇÏ±â (Àç±Í ¶Ç´Â ½ºÅÃ ¹æ½Ä ¼±ÅÃ)
-- bfs ±¸ÇöÇÏ±â
+- __init__ êµ¬í˜„í•˜ê¸°
+- add_edge êµ¬í˜„í•˜ê¸°
+- dfs êµ¬í˜„í•˜ê¸° (ì¬ê·€ ë˜ëŠ” ìŠ¤íƒ ë°©ì‹ ì„ íƒ)
+- bfs êµ¬í˜„í•˜ê¸°
 """
 
 
 class Graph:
     def __init__(self, n: int) -> None:
         """
-        ±×·¡ÇÁ ÃÊ±âÈ­
-        n: Á¤Á¡ÀÇ °³¼ö (1¹øºÎÅÍ n¹ø±îÁö)
+        ê·¸ë˜í”„ ì´ˆê¸°í™”
+        n: ì •ì ì˜ ê°œìˆ˜ (1ë²ˆë¶€í„° në²ˆê¹Œì§€)
         """
         self.n = n
         self.graph: list[list[int]] = [[] for _ in range(n + 1)]
@@ -26,18 +26,18 @@ class Graph:
     
     def add_edge(self, u: int, v: int) -> None:
         """
-        ¾ç¹æÇâ °£¼± Ãß°¡
+        ì–‘ë°©í–¥ ê°„ì„  ì¶”ê°€
         """
         self.graph[u].append(v)
         self.graph[v].append(u)
     
     def dfs(self, start: int) -> list[int]:
         """
-        ±íÀÌ ¿ì¼± Å½»ö (DFS)
+        ê¹Šì´ ìš°ì„  íƒìƒ‰ (DFS)
         
-        ±¸Çö ¹æ¹ı ¼±ÅÃ:
-        1. Àç±Í ¹æ½Ä: ÇÔ¼ö ³»ºÎ¿¡¼­ Àç±Í ÇÔ¼ö Á¤ÀÇÇÏ¿© ±¸Çö
-        2. ½ºÅÃ ¹æ½Ä: ¸í½ÃÀû ½ºÅÃÀ» »ç¿ëÇÏ¿© ¹İº¹¹®À¸·Î ±¸Çö
+        êµ¬í˜„ ë°©ë²• ì„ íƒ:
+        1. ì¬ê·€ ë°©ì‹: í•¨ìˆ˜ ë‚´ë¶€ì—ì„œ ì¬ê·€ í•¨ìˆ˜ ì •ì˜í•˜ì—¬ êµ¬í˜„
+        2. ìŠ¤íƒ ë°©ì‹: ëª…ì‹œì  ìŠ¤íƒì„ ì‚¬ìš©í•˜ì—¬ ë°˜ë³µë¬¸ìœ¼ë¡œ êµ¬í˜„
         """
         visited = [False] * (self.n + 1)
         order: list[int] = []
@@ -54,8 +54,8 @@ class Graph:
     
     def bfs(self, start: int) -> list[int]:
         """
-        ³Êºñ ¿ì¼± Å½»ö (BFS)
-        Å¥¸¦ »ç¿ëÇÏ¿© ±¸Çö
+        ë„ˆë¹„ ìš°ì„  íƒìƒ‰ (BFS)
+        íë¥¼ ì‚¬ìš©í•˜ì—¬ êµ¬í˜„
         """
         visited = [False] * (self.n + 1)
         order: list[int] = []
@@ -75,7 +75,7 @@ class Graph:
     
     def search_and_print(self, start: int) -> None:
         """
-        DFS¿Í BFS °á°ú¸¦ Ãâ·Â
+        DFSì™€ BFS ê²°ê³¼ë¥¼ ì¶œë ¥
         """
         dfs_result = self.dfs(start)
         bfs_result = self.bfs(start)
@@ -90,7 +90,7 @@ import sys
 
 
 """
--¾Æ¹«°Íµµ ¼öÁ¤ÇÏÁö ¸¶¼¼¿ä!
+-ì•„ë¬´ê²ƒë„ ìˆ˜ì •í•˜ì§€ ë§ˆì„¸ìš”!
 """
 
 
@@ -101,13 +101,13 @@ def main() -> None:
 
     N, M, V = intify(lines[0])
     
-    graph = Graph(N)  # ±×·¡ÇÁ »ı¼º
+    graph = Graph(N)  # ê·¸ë˜í”„ ìƒì„±
     
-    for i in range(1, M + 1): # °£¼± Á¤º¸ ÀÔ·Â
+    for i in range(1, M + 1): # ê°„ì„  ì •ë³´ ì…ë ¥
         u, v = intify(lines[i])
         graph.add_edge(u, v)
     
-    graph.search_and_print(V) # DFS¿Í BFS ¼öÇà ¹× Ãâ·Â
+    graph.search_and_print(V) # DFSì™€ BFS ìˆ˜í–‰ ë° ì¶œë ¥
 
 
 if __name__ == "__main__":

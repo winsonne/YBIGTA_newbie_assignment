@@ -6,7 +6,7 @@ from typing import TypeVar, Generic, Optional, Callable
 
 """
 TODO:
-- SegmentTree ±¸ÇöÇÏ±â
+- SegmentTree êµ¬í˜„í•˜ê¸°
 """
 
 
@@ -77,7 +77,7 @@ class SegmentTree(Generic[T, U]):
             left_value = self.tree[left]
 
             if not isinstance(left_value, int):
-                raise TypeError("find_kth´Â int ¼¼±×¸ÕÆ® Æ®¸®¿¡¼­¸¸ »ç¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù.")
+                raise TypeError("find_kthëŠ” int ì„¸ê·¸ë¨¼íŠ¸ íŠ¸ë¦¬ì—ì„œë§Œ ì‚¬ìš©í•  ìˆ˜ ìˆìŠµë‹ˆë‹¤.")
 
             if left_value >= k:
                 node = left
@@ -93,8 +93,8 @@ import sys
 
 """
 TODO:
-- ÀÏ´Ü SegmentTreeºÎÅÍ ±¸ÇöÇÏ±â
-- main ±¸ÇöÇÏ±â
+- ì¼ë‹¨ SegmentTreeë¶€í„° êµ¬í˜„í•˜ê¸°
+- main êµ¬í˜„í•˜ê¸°
 """
 
 

@@ -4,8 +4,8 @@ from typing import TypeVar, Generic, Optional, Iterable
 
 """
 TODO:
-- Trie.push ±¸ÇöÇÏ±â
-- (ÇÊ¿äÇÒ °æ¿ì) Trie¿¡ Ãß°¡ method ±¸ÇöÇÏ±â
+- Trie.push êµ¬í˜„í•˜ê¸°
+- (í•„ìš”í•  ê²½ìš°) Trieì— ì¶”ê°€ method êµ¬í˜„í•˜ê¸°
 """
 
 
@@ -26,9 +26,9 @@ class Trie(list[TrieNode[T]]):
 
     def push(self, seq: Iterable[T]) -> None:
         """
-        seq: TÀÇ ¿­ (list[int]ÀÏ ¼öµµ ÀÖ°í strÀÏ ¼öµµ ÀÖ°í µîµî...)
+        seq: Tì˜ ì—´ (list[int]ì¼ ìˆ˜ë„ ìˆê³  strì¼ ìˆ˜ë„ ìˆê³  ë“±ë“±...)
 
-        action: trie¿¡ seqÀ» ÀúÀåÇÏ±â
+        action: trieì— seqì„ ì €ì¥í•˜ê¸°
         """
         pointer = 0
         for element in seq:
@@ -50,9 +50,9 @@ class Trie(list[TrieNode[T]]):
 
     def find(self, seq: Iterable[T]) -> Optional[int]:
         """
-        seq: TÀÇ ¿­
+        seq: Tì˜ ì—´
 
-        returns: seq¿¡ ÇØ´çÇÏ´Â ³ëµåÀÇ ÀÎµ¦½º. Á¸ÀçÇÏÁö ¾ÊÀ¸¸é None.
+        returns: seqì— í•´ë‹¹í•˜ëŠ” ë…¸ë“œì˜ ì¸ë±ìŠ¤. ì¡´ì¬í•˜ì§€ ì•Šìœ¼ë©´ None.
         """
         pointer = 0
         for element in seq:
@@ -73,18 +73,18 @@ from typing import Optional
 
 """
 TODO:
-- ÀÏ´Ü TrieºÎÅÍ ±¸ÇöÇÏ±â
-- count ±¸ÇöÇÏ±â
-- main ±¸ÇöÇÏ±â
+- ì¼ë‹¨ Trieë¶€í„° êµ¬í˜„í•˜ê¸°
+- count êµ¬í˜„í•˜ê¸°
+- main êµ¬í˜„í•˜ê¸°
 """
 
 
 def count(trie: Trie, query_seq: str) -> int:
     """
-    trie - ÀÌ¸§ ±×´ë·Î trie
-    query_seq - ´Ü¾î ("hello", "goodbye", "structures" µî)
+    trie - ì´ë¦„ ê·¸ëŒ€ë¡œ trie
+    query_seq - ë‹¨ì–´ ("hello", "goodbye", "structures" ë“±)
 
-    returns: query_seqÀÇ ´Ü¾î¸¦ ÀÔ·ÂÇÏ±â À§ÇØ ¹öÆ°À» ´­·¯¾ß ÇÏ´Â È½¼ö
+    returns: query_seqì˜ ë‹¨ì–´ë¥¼ ì…ë ¥í•˜ê¸° ìœ„í•´ ë²„íŠ¼ì„ ëˆŒëŸ¬ì•¼ í•˜ëŠ” íšŸìˆ˜
     """
     pointer = 0
     cnt = 0

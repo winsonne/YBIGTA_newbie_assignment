@@ -4,8 +4,8 @@ from typing import TypeVar, Generic, Optional, Iterable
 
 """
 TODO:
-- Trie.push ±¸ÇöÇÏ±â
-- (ÇÊ¿äÇÒ °æ¿ì) Trie¿¡ Ãß°¡ method ±¸ÇöÇÏ±â
+- Trie.push êµ¬í˜„í•˜ê¸°
+- (í•„ìš”í•  ê²½ìš°) Trieì— ì¶”ê°€ method êµ¬í˜„í•˜ê¸°
 """
 
 
@@ -26,9 +26,9 @@ class Trie(list[TrieNode[T]]):
 
     def push(self, seq: Iterable[T]) -> None:
         """
-        seq: TÀÇ ¿­ (list[int]ÀÏ ¼öµµ ÀÖ°í strÀÏ ¼öµµ ÀÖ°í µîµî...)
+        seq: Tì˜ ì—´ (list[int]ì¼ ìˆ˜ë„ ìˆê³  strì¼ ìˆ˜ë„ ìˆê³  ë“±ë“±...)
 
-        action: trie¿¡ seqÀ» ÀúÀåÇÏ±â
+        action: trieì— seqì„ ì €ì¥í•˜ê¸°
         """
         pointer = 0
         for element in seq:
@@ -50,9 +50,9 @@ class Trie(list[TrieNode[T]]):
 
     def find(self, seq: Iterable[T]) -> Optional[int]:
         """
-        seq: TÀÇ ¿­
+        seq: Tì˜ ì—´
 
-        returns: seq¿¡ ÇØ´çÇÏ´Â ³ëµåÀÇ ÀÎµ¦½º. Á¸ÀçÇÏÁö ¾ÊÀ¸¸é None.
+        returns: seqì— í•´ë‹¹í•˜ëŠ” ë…¸ë“œì˜ ì¸ë±ìŠ¤. ì¡´ì¬í•˜ì§€ ì•Šìœ¼ë©´ None.
         """
         pointer = 0
         for element in seq:
@@ -73,10 +73,10 @@ import sys
 
 """
 TODO:
-- ÀÏ´Ü lib.pyÀÇ Trie ClassºÎÅÍ ±¸ÇöÇÏ±â
-- main ±¸ÇöÇÏ±â
+- ì¼ë‹¨ lib.pyì˜ Trie Classë¶€í„° êµ¬í˜„í•˜ê¸°
+- main êµ¬í˜„í•˜ê¸°
 
-ÈùÆ®: ÇÑ ±ÛÀÚÂ¥¸® ÀÚ·á¿¡µµ ±×³É strÀ» ¾²±â¿¡´Â ¸Ş¸ğ¸®°¡ ¾Æ±õ´Ù...
+íŒíŠ¸: í•œ ê¸€ìì§œë¦¬ ìë£Œì—ë„ ê·¸ëƒ¥ strì„ ì“°ê¸°ì—ëŠ” ë©”ëª¨ë¦¬ê°€ ì•„ê¹ë‹¤...
 """
 
 MOD = 1_000_000_007
@@ -97,7 +97,7 @@ def main() -> None:
 
     def dfs(index: int) -> int:
         """
-        ÇØ´ç ³ëµå¸¦ ·çÆ®·Î ÇÏ´Â ¼­ºêÆ®¸®°¡ ¸¸µé ¼ö ÀÖ´Â ÀÌ¸§ ¹è¿­ ¹æ¹ıÀÇ ¼ö¸¦ ¹İÈ¯ÇÑ´Ù.
+        í•´ë‹¹ ë…¸ë“œë¥¼ ë£¨íŠ¸ë¡œ í•˜ëŠ” ì„œë¸ŒíŠ¸ë¦¬ê°€ ë§Œë“¤ ìˆ˜ ìˆëŠ” ì´ë¦„ ë°°ì—´ ë°©ë²•ì˜ ìˆ˜ë¥¼ ë°˜í™˜í•œë‹¤.
         """
         node = trie[index]
         branch_count = len(node.children) + (1 if node.is_end else 0)

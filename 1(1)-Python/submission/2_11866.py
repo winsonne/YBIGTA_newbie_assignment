@@ -4,17 +4,17 @@ from collections import deque
 
 """
 TODO:
-- rotate_and_remove ±¸ÇöÇÏ±â 
+- rotate_and_remove êµ¬í˜„í•˜ê¸° 
 """
 
 
 def create_circular_queue(n: int) -> deque[int]:
-    """1ºÎÅÍ n±îÁöÀÇ ¼ıÀÚ·Î deque¸¦ »ı¼ºÇÕ´Ï´Ù."""
+    """1ë¶€í„° nê¹Œì§€ì˜ ìˆ«ìë¡œ dequeë¥¼ ìƒì„±í•©ë‹ˆë‹¤."""
     return deque(range(1, n + 1))
 
 def rotate_and_remove(queue: deque[int], k: int) -> int:
     """
-    Å¥¿¡¼­ k¹øÂ° ¿ø¼Ò¸¦ Á¦°ÅÇÏ°í ¹İÈ¯ÇÕ´Ï´Ù.
+    íì—ì„œ kë²ˆì§¸ ì›ì†Œë¥¼ ì œê±°í•˜ê³  ë°˜í™˜í•©ë‹ˆë‹¤.
     """
     queue.rotate(-(k - 1))
     return queue.popleft()
@@ -24,18 +24,18 @@ def rotate_and_remove(queue: deque[int], k: int) -> int:
 
 """
 TODO:
-- josephus_problem ±¸ÇöÇÏ±â
-    # ¿ä¼¼Çª½º ¹®Á¦ ±¸Çö
-        # 1. Å¥ »ı¼º
-        # 2. Å¥°¡ ºô ¶§±îÁö ¹İº¹
-        # 3. Á¦°Å ¼ø¼­ ¸®½ºÆ® ¹İÈ¯
+- josephus_problem êµ¬í˜„í•˜ê¸°
+    # ìš”ì„¸í‘¸ìŠ¤ ë¬¸ì œ êµ¬í˜„
+        # 1. í ìƒì„±
+        # 2. íê°€ ë¹Œ ë•Œê¹Œì§€ ë°˜ë³µ
+        # 3. ì œê±° ìˆœì„œ ë¦¬ìŠ¤íŠ¸ ë°˜í™˜
 """
 
 
 def josephus_problem(n: int, k: int) -> list[int]:
     """
-    ¿ä¼¼Çª½º ¹®Á¦ ÇØ°á
-    n¸í Áß k¹øÂ°¸¶´Ù Á¦°ÅÇÏ´Â ¼ø¼­¸¦ ¹İÈ¯
+    ìš”ì„¸í‘¸ìŠ¤ ë¬¸ì œ í•´ê²°
+    nëª… ì¤‘ kë²ˆì§¸ë§ˆë‹¤ ì œê±°í•˜ëŠ” ìˆœì„œë¥¼ ë°˜í™˜
     """
     queue = create_circular_queue(n)
     result: list[int] = []
@@ -44,13 +44,13 @@ def josephus_problem(n: int, k: int) -> list[int]:
     return result
 
 def solve_josephus() -> None:
-    """ÀÔ, Ãâ·Â format"""
+    """ì…, ì¶œë ¥ format"""
     n: int
     k: int
     n, k = map(int, input().split())
     result: list[int] = josephus_problem(n, k)
     
-    # Ãâ·Â Çü½Ä: <3, 6, 2, 7, 5, 1, 4>
+    # ì¶œë ¥ í˜•ì‹: <3, 6, 2, 7, 5, 1, 4>
     print("<" + ", ".join(map(str, result)) + ">")
 
 if __name__ == "__main__":
