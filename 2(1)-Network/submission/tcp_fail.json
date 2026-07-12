@@ -1,0 +1,26 @@
+{
+  "url": "http://google.com:81",
+  "host": "google.com",
+  "port": 81,
+  "path": "/",
+  "dns_ips": [
+    "172.217.213.113",
+    "172.217.213.101",
+    "172.217.213.139",
+    "172.217.213.100",
+    "172.217.213.102",
+    "172.217.213.138",
+    "2404:6800:400a:1001::8b",
+    "2404:6800:400a:1001::8a",
+    "2404:6800:400a:1001::64",
+    "2404:6800:400a:1001::65"
+  ],
+  "chosen_ip": "2404:6800:400a:1001::65",
+  "tcp_ms": null,
+  "local_addr": null,
+  "peer_addr": null,
+  "http_status": null,
+  "body_preview": "",
+  "stage": "tcp",
+  "error": "[Errno 101] Network is unreachable"
+}
