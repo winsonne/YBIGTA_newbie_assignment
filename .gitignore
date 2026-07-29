@@ -226,6 +226,5 @@ __marimo__/
 
 # Local datasets and generated files
 5(1)-Basic_ML/creditcard.csv
-5(2)-DL/utils.py
 6(1)-CV/data/
 6(1)-CV/dataset_samples.png
