@@ -223,3 +223,9 @@ __marimo__/
 1(2)-CS_basics/submission/
 1(2)-CS_basics/miniconda.sh
 2(1)-Network/tests/conftest.py
+
+# Local datasets and generated files
+5(1)-Basic_ML/creditcard.csv
+5(2)-DL/utils.py
+6(1)-CV/data/
+6(1)-CV/dataset_samples.png
